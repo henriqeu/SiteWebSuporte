@@ -25,6 +25,7 @@ public class ChamadoController {
     @Autowired
     private ProcedimentoRepositorio procedimentoRepositorio;
 
+    // * Acessa a lista de chamados pelo visitante* //
     @GetMapping("/ListaChamados")
     public String ListaChamados(Model model) {
         List<Chamado> chamado = (List<Chamado>) chamadoRepositorio.findAll();
@@ -32,6 +33,7 @@ public class ChamadoController {
         return "ListaChamados";
     }
 
+    // * Recebe o form do html *//
     @PostMapping(path = "/addChamado")
     public String novoChamado(@Validated Chamado chamado, BindingResult result) {
 
