@@ -1,0 +1,68 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins-Regular, sans-serif;
+  background-color: rgb(57, 151, 151);
+
+  
+}
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  
+  background-image: url("https://img.freepik.com/free-vector/abstract-shape-with-halftone-background_1409-1277.jpg?w=1380&t=st=1657833835~exp=1657834435~hmac=4f99d59345b786cabb1c70b86b31d151e4222d853f147e3d3567aabafa8d2524");
+ 
+}
+
+#containerLogin {
+ width: 650px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 35px 119px 29px 140px;
+}
+
+#login input {
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+#messageParam {
+  color: red;
+padding-top: 2vh;
+}
+
+#footerLogin .imgATOS {
+width: 8vw;
+height: 8vw;
+}
+
+#footerLogin .imgUFN {
+    width: 10vw;
+    height:6vw;
+}
+    

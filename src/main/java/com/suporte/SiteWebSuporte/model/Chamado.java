@@ -5,10 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Chamados")
 public class Chamado {
 
     @Id
@@ -16,6 +14,7 @@ public class Chamado {
     private long id;
     private String categoria;
     private String descricao;
+
     private String numeroChamado;
     private String procedimentoUsado;
     @Column(columnDefinition = "TEXT")

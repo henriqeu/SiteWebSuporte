@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
 <head>
-    <title>Please Log In</title>
+    <title>Entrar em sua conta</title>
+    <!-- BOOTSTRAP CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- BOOTSTRAP avaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <!-- ARQUIVO CSS DA PASTA STATIC/CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Importando a fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
-<h1>Please Log In</h1>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<form method="post" th:action="@{/process-login}">
-    <div>
-        <input name="username" placeholder="Username" type="text"/>
+    <!-- Form de login  -->
+
+    <div id="container">
+        <div id="containerLogin">
+
+            <div id="login" class="login">
+                <h1>Acesse sua conta</h1>
+                <form method="post" th:action="@{/process-login}">
+                    <div>
+                        <input class="form-control mb-" id="username" name="username" placeholder="Insira seu usuário"
+                            type="text" />
+                    </div>
+                    <div>
+                        <input class="form-control" name="password" placeholder="Insira sua senha" type="password" />
+                    </div>
+                    <input id="loginButton" class="col-sm-12 btn btn-primary" type="submit" value="Entrar">
+
+                    <div class="col-sm-12 text-center " id="messageParam" th:if="${param.logout}">
+                        <P>Você saiu da sessão!</P>
+                    </div>
+                    <div class="col-sm-12 text-center" id="messageParam" th:if="${param.error}">
+                        <p>Usuário ou Senha inválidos!</p>
+                    </div>
+
+                    <div class="col-sm-12 text-center" id="footerLogin">
+
+                        <img class="imgATOS" src="https://cdn-icons-png.flaticon.com/512/39/39211.png?w=360" alt="">
+                        <img class="imgUFN"
+                            src="https://o.remove.bg/downloads/b453a7d2-8673-48d0-850d-eb11ffc220b0/imagem_2022-07-14_175850460-removebg-preview.png"
+                            alt="">
+                            <div class="col-sm-12 text-center">Desenvolvido por Luan Henrique, Academia Java ©</div>
+                  </div>
+           
+                  
+            </div>
+            </form>
+        </div>
+
     </div>
-    <div>
-        <input name="password" placeholder="Password" type="password"/>
     </div>
-    <input type="submit" value="Log in"/>
-</form>
+
+
 </body>
+
 </html>

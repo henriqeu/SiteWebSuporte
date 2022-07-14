@@ -1,6 +1,5 @@
 package com.suporte.SiteWebSuporte.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.suporte.SiteWebSuporte.model.Chamado;

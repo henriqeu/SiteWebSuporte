@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // * Acessar o form login */
                 // * Se o usuario e senha estiver correto, acessa a lsita de procedimentos,
                 // pagina inicial */
-                .antMatchers("/login").permitAll()
+                
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -34,9 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // *Retorna erro caso o usuario e senha estiver incorreto */
                 .failureUrl("/login?error=true")
-                .permitAll()
                 .and()
-
                 // * Faz o logout/encerra a SESSAO */
                 .logout()
                 .logoutSuccessUrl("/login?logout=true")

@@ -38,14 +38,7 @@
     <input type="text" th:field="*{categoria}" id="categoria" placeholder="categoria">
     <span th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></span>
     <input type="submit" value="Update Chamado"> 
-  </form>
- 
-  <form>
-    <label for="procedimentosFeito"> Procedimento Feitos </label>
-    <textarea id="procedimentosFeito" rows="4" cols="50" th:field="*{chamado.procedimentosFeito}"
-      name="texto"></textarea>
-    <br>
-   
+
   </form>
 
   <a href="/">Voltar</a>

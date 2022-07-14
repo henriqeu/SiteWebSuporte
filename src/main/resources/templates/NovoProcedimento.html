@@ -32,9 +32,7 @@
 <body>
 
   <form th:object="${procedimento}" th:action="@{/add}" method="post">
-    <label for="id_procedimento"> KB </label>
-    <input type="number" name="id_procedimento" id="id_procedimento">
-    <p>
+   
     <label for="nome"> Nome do Procedimento </label>
     <input type="text" name="nome" id="nome">
     <p>
@@ -46,9 +44,9 @@
     <br>
     <input type="submit" value="Submit"> 
     <input type="reset" value="Limpar Campos"> 
-    <a href="/"><button>Voltar</button></a>
+    
   </form>
-
+  <a href="/"><button>Voltar</button></a>
 
 </body>
 

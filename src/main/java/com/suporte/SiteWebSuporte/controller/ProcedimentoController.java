@@ -15,7 +15,7 @@ import com.suporte.SiteWebSuporte.model.Procedimento;
 import com.suporte.SiteWebSuporte.repository.ProcedimentoRepositorio;
 
 @Controller
-public class HomeController {
+public class ProcedimentoController {
     @Autowired // ela serv para nos comunicar com UserRepository
     private ProcedimentoRepositorio procedimentoRepositorio;
 
