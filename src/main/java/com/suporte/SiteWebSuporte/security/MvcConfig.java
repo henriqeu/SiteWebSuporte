@@ -10,7 +10,16 @@ public class MvcConfig implements WebMvcConfigurer {
     // * Procedimento para retornar uma pagina de erro / ou sem permissão */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/403").setViewName("403");
+
+        
+        registry.addViewController("/EditarChamado").setViewName("EditarChamado");
+        registry.addViewController("/EditarProcedimento").setViewName("EditarProcedimento");
+        registry.addViewController("/ListaChamados").setViewName("ListaChamados");
+        registry.addViewController("/ListaProcedimentos").setViewName("ListaProcedimentos");
+        registry.addViewController("/MostrarProcedimento").setViewName("MostrarProcedimento");
+        registry.addViewController("/NovoChamado").setViewName("NovoChamado");
+        registry.addViewController("/NovoProcedimento").setViewName("NovoProcedimento");
+
     }
 
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -22,10 +21,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                /** O administrador e o visitante acessa as paginas abaixao */
+                .antMatchers("/", "/MostrarProcedimento", "/ListaChamados", "/ListaProcedimentos")
+                .hasAnyRole("ADMIN", "USER")
+
+                /** O visitante acessa as paginas abaixao */
+                .antMatchers("/NovoChamado", "/EditarChamado")
+                .hasAnyRole("USER")
+
+                /** O administrador acessa as paginas abaixao */
+                .antMatchers("/NovoProcedimento", "EditarProcedimento")
+                .hasAnyRole("ADMIN")
+
                 // * Acessar o form login */
-                // * Se o usuario e senha estiver correto, acessa a lsita de procedimentos,
-                // pagina inicial */
-                
+                // * Se o usuario e senha estiver correto, acessa a lista de procedimentos 
+                // que é a pagina inicial/index */
                 .and()
                 .formLogin()
                 .loginPage("/login")
