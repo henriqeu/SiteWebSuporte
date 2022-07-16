@@ -20,7 +20,7 @@ public class ProcedimentoController {
     private ProcedimentoRepositorio procedimentoRepositorio;
 
     // * Mapeando o endereco */
-    @GetMapping("/")
+    @GetMapping("/ListaProcedimentos")
     public String index(Model model) {
         List<Procedimento> textoKB = (List<Procedimento>) procedimentoRepositorio.findAll();
         model.addAttribute("listProcedimentos", textoKB);

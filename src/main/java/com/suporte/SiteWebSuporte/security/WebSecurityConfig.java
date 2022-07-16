@@ -34,13 +34,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .hasAnyRole("ADMIN")
 
                 // * Acessar o form login */
-                // * Se o usuario e senha estiver correto, acessa a lista de procedimentos 
+                // * Se o usuario e senha estiver correto, acessa a lista de procedimentos
                 // que é a pagina inicial/index */
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/process-login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/ListaProcedimentos")
 
                 // *Retorna erro caso o usuario e senha estiver incorreto */
                 .failureUrl("/login?error=true")
