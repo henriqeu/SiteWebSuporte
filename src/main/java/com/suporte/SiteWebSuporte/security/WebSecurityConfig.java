@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 /** O administrador e o visitante acessa as paginas abaixao */
-                .antMatchers("/", "/MostrarProcedimento", "/ListaChamados", "/ListaProcedimentos")
+                .antMatchers("/MostrarProcedimento", "/ListaChamados", "/ListaProcedimentos")
                 .hasAnyRole("ADMIN", "USER")
 
                 /** O visitante acessa as paginas abaixao */

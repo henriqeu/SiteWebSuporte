@@ -82,7 +82,8 @@
         </thead>
         <tbody>
           <tr th:each="procedimento : ${listProcedimentos}">
-            <td>KB001<span th:text="${procedimento.id}"></span></td>
+            
+            <td>KB0<span th:text="${procedimento.id}"></span></td>
             <td> <span th:text="${procedimento.nome}"></span></td>
             <td> <span th:text="${procedimento.categoria}"></span></td>
             <td class="col-sm-6">

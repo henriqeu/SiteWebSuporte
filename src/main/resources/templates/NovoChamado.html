@@ -7,64 +7,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Chamado</title>
-    
- <!-- Font Icon -->
- <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
- <!-- Main css -->
- <link rel="stylesheet" href="css/formChamado.css">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/formChamado.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
 </head>
 
-    <title>Novo Chamado</title>
+<title>Novo Chamado</title>
 </head>
-<script>
-    
-</script>
 <body>
+
     <div class="main">
 
         <!-- Sign up form -->
-        <section class="signup">
-            <div class="container col-lg-12"> ">
-                <div class="signup-content">      
-                                   
-                </div>
+        <section class="form">
+            <div class="container col-sm-12">
+                <div class="form-content">
+                    <h2 class="form-title col-md-6 m-3">Novo Chamado</h2>
+                    <form th:object="${chamado}" th:action="@{/addChamado}" method="post">
+                        <form>
+                            <!-- Grid row -->
+                            <div class="form-row">
+                                <!-- Grid column -->
+                                <div class="col-md-6 m-3">
+                                    <!-- CATEGORIA  -->
+                                    <div class="md-form form-group">
+                                        <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Categoria">
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                                <div class="col-md-6 m-3">
+                                    <!-- PROCEDIMENTO USADO  -->
+                                    <div class="md-form form-group">
+                                        <select class="form-select" aria-label="Default select example"
+                                            name="procedimentoUsado" id="procedimentoUsado">
+                                            <option value="Nenhum" selected>Selecione o procedimento que foi usado
+                                            </option>
+                                            <option th:each="procedimento :${ListaID_Procedimentos}"
+                                                th:text=" ' KB0'+${procedimento.id_procedimento}+' '+${procedimento.nome}">
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- DESCRICAO  -->
+                                <div class="col-md-6 m-3">
+                           
+                                    <div class="md-form form-group">
+                                        <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do Chamado">
+                                    </div>
+                                </div>
+                                 <!-- PROCEDIMENTO FEITO  -->
+                                <div class="col-md-6 m-3">
+                            
+                                    <div class="md-form form-group">
+                                        <div class="form-floating">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Escreve o processo que foi feito para a solucão do problema</label>
+                                              </div>
+                                          </div>
+                                    </div>
+                                </div>
+
+                                 <!-- STATUS  -->
+                                <div class="col-md-6 m-3">
+                                    <!-- Material input -->
+                                    <div class="md-form form-group">
+                                        <label for="statusChamado" class="m-2"> Status do Chamado: </label>
+                                        <input type="radio" id="statusChamado" name="statusChamado" value="Resolvido"> Resolvido
+                                        <input type="radio" id="statusChamado" name="statusChamado" value="Validacao"> Em Validação
+                                    </div>
+                                </div>
+                                <div class="col-md-6 m-5">                             
+                                    <input class="btn btn-dark btn-lg" type="submit" value="Salvar">
+                                    <button class="btn btn-light  btn-lg" type="reset"> Limpar Campos </button>   
+                                </form>                
+                                    <a class="btn btn-primary btn-lg m-0 float-end" href="/ListaProcedimentos"> Voltar </a>  
+                                </div>
+                            </div>
+                                           
+                 </div>
             </div>
         </section>
 
-        <!-- Sing in  Form -->
-<!-- ///////////////////////// -->
-    <form th:object="${chamado}" th:action="@{/addChamado}" method="post">
-     
-            <label for="categoria"> Categoria </label>
-            <input type="text" name="categoria" id="categoria">
-            <p> </p>
-            <label for="procedimentoUsado"> Procedimento Usado </label>
-
-            <select name="procedimentoUsado" id="procedimentoUsado">
-
-                <option th:each="procedimento :${ListaID_Procedimentos}"
-                    th:text="${procedimento.id_procedimento}+'  '+${procedimento.nome}"></option>
-            </select>
-        <p> </p>
-        <label for="descricao"> Descrição do Chamado </label>
-        <input type="text" name="descricao" id="descricao">
-        <p> </p>
-        <p>
-            <label for="procedimentosFeito"> Procedimento Feitos </label>
-            <textarea id="procedimentosFeito" name="procedimentosFeito" rows="4"
-                cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
-                <p> </p>
-            <label for="statusChamado"> Status do Chamado </label>
-            <input type="radio" id="statusChamado" name="statusChamado" value="Resolvido"> Resolvido
-            <input type="radio" id="statusChamado" name="statusChamado" value="Validacao"> Em Validação
-            <p> </p>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Limpar Campos">
-
-    </form>
-    <p> </p>
-    <a href="/"><button>Voltar</button></a>
+       
 </body>
 
 </html>

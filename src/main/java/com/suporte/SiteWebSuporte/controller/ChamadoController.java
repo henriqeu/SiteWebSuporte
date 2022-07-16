@@ -53,6 +53,11 @@ public class ChamadoController {
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("chamado", chamado);
 
+        // Mostra a lista de procedimentos no campo input, para alterar a procedimento
+        // do chamado
+        List<Procedimento> ListaID_Procedimentos = (List<Procedimento>) procedimentoRepositorio.findAll();
+        model.addAttribute("ListaID_Procedimentos", ListaID_Procedimentos);
+
         System.out.println("id: " + id);
 
         return "EditarChamado";
@@ -80,4 +85,5 @@ public class ChamadoController {
         System.out.println("lol" + ListaID_Procedimentos);
         return "/NovoChamado";
     }
+
 }
