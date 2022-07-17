@@ -26,8 +26,9 @@ html {
   align-items: center;
   padding: 15px;
   
-  background-image: url("https://img.freepik.com/free-vector/abstract-shape-with-halftone-background_1409-1277.jpg?w=1380&t=st=1657833835~exp=1657834435~hmac=4f99d59345b786cabb1c70b86b31d151e4222d853f147e3d3567aabafa8d2524");
- 
+  background-image: url("https://images.unsplash.com/photo-1583339972074-a01b1a10b693?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #containerLogin {
