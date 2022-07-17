@@ -30,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .hasAnyRole("USER")
 
                 /** O administrador acessa as paginas abaixao */
-                .antMatchers("/NovoProcedimento", "EditarProcedimento")
+                .antMatchers("/NovoProcedimento", "EditarProcedimento", "/deletarProcedimento/{id}")
                 .hasAnyRole("ADMIN")
 
                 // * Acessar o form login */

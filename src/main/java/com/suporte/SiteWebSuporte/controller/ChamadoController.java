@@ -1,16 +1,21 @@
 package com.suporte.SiteWebSuporte.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.suporte.SiteWebSuporte.model.Chamado;
 import com.suporte.SiteWebSuporte.model.Procedimento;
 import com.suporte.SiteWebSuporte.repository.ChamadoRepositorio;
 import com.suporte.SiteWebSuporte.repository.ProcedimentoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -79,11 +84,19 @@ public class ChamadoController {
     // Abrir a selecao de de KBS existentes no input do "procedimentoUsado" */
     @RequestMapping(value = ("/NovoChamado"), method = RequestMethod.GET)
     public String NovoChamado(Model model) {
-
         List<Procedimento> ListaID_Procedimentos = (List<Procedimento>) procedimentoRepositorio.findAll();
         model.addAttribute("ListaID_Procedimentos", ListaID_Procedimentos);
         System.out.println("lol" + ListaID_Procedimentos);
         return "/NovoChamado";
+    }
+
+    // Deletar Chamado
+    @GetMapping("/deletarChamado/{id}")
+    public String deleteChamaado(@PathVariable("id") long id, Model model) {
+        Chamado chamado = chamadoRepositorio.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("ID invalido:" + id));
+        chamadoRepositorio.delete(chamado);
+        return "redirect:/ListaChamados";
     }
 
 }

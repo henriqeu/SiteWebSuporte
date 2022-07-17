@@ -67,9 +67,12 @@
   <!-- Navbar -->
 
   <div class="container">
-    <h1 class="mb-6">Lista de Procedimentos</h1>
-    <h2 class="mb-3">Lista de Procedimentos</h2>
+
     <div class="table-responsive">
+      <caption>
+        <h1 class="mb-6">Lista de Procedimentos</h1>
+        <h2 class="mb-3">Lista de Procedimentos</h2>
+      </caption>
       <table class="table custom-table">
         <thead>
           <tr>
@@ -82,15 +85,19 @@
         </thead>
         <tbody>
           <tr th:each="procedimento : ${listProcedimentos}">
-            
+
             <td>KB0<span th:text="${procedimento.id}"></span></td>
             <td> <span th:text="${procedimento.nome}"></span></td>
             <td> <span th:text="${procedimento.categoria}"></span></td>
             <td class="col-sm-6">
               <a sec:authorize="hasRole('ADMIN')" th:href="@{/EditarProcedimento/{id}(id=${procedimento.id})}"
                 class="btn btn-primary btn-sm m-0">Editar</a>
+
               <a th:href="@{/MostrarProcedimento/{id}(id=${procedimento.id})}"
                 class="btn btn-dark btn-sm m-0">Visualizar</a>
+
+              <a sec:authorize="hasRole('ADMIN')" th:href="@{/deletarProcedimento/{id}(id=${procedimento.id})}" class="btn btn-danger  btn-sm m-0">Excluir</a>
+
             </td>
         </tbody>
         </tr>
@@ -99,7 +106,7 @@
     </div>
   </div>
   <!-- ////////////////////////////////////////////////////////////////////////////////// -->
-  <div class="w-auto p-3 fixed-bottom" style="background-color: #45526e;">
+  <div class="w-auto p- fixed-static mt-auto" style="background-color: #45526e;">
     <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
       <div class="row">
 
@@ -136,7 +143,7 @@
           </p>
         </div>
 
-       
+
         <hr class="my-1">
 
         <!-- Section: Copyright -->
@@ -144,16 +151,16 @@
           <div class="row d-flex align-items-center">
             <div class="col-md-7 col-lg-12 text-md-center">
               <div class="p-0">
-                © 2020 Copyright:
+                © 2022 Copyright:
                 <a class="text-white">Desenvolvido por Luan Henrique</a>
               </div>
             </div>
 
             <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-center">
               <!-- Facebook -->
-            
-            
-          </div>
+
+
+            </div>
         </section>
         <!-- Copyright 
               <a class="navbar-brand" href="#"><img id="MDB-logo"

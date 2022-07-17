@@ -32,6 +32,61 @@
 </head>
 
 <body>
+  <div class="main">
+
+    <!-- Sign up form -->
+    <section class="form">
+      <div style="height:1100px" class="container col-sm-12">
+        <div class="form-content">
+          <h2 class="display-5 text-dark form-title col-md-6 m-3">Editar Procedimento #<span th:text="*{procedimento.id}"></span> 
+          </h2>
+          
+          </h2>
+          <form action="#" th:object="${procedimento}" th:action="@{/atualizarProcedimento/{id}(id=${procedimento.id})}"
+            method="post">
+            <div class="form-row">
+              <!-- Nome Procedimento  -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <label for="nome" class=" m-2">Nome do Procedimento</label>
+                  <input type="text" class="form-control" th:field="*{nome}" name="nome" id="nome">
+                  <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                </div>
+              </div>
+              <!-- Categoria -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <label for="categoria" class=" m-2">Categoria</label>
+                  <input type="text" class="form-control" th:field="*{categoria}" name="categoria" id="categoria">
+                  <span th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></span>
+                </div>
+              </div>
+
+              <!-- Textp d Procedimento -->
+              <div style="width: 95%;" class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <label for="categoria" class=" m-2">Descricao do Procedimento</label>
+                  <textarea th:field="*{texto}" name="texto" id="texto" rows="25" cols="100"></textarea>
+                  <span th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}"></span>
+                </div>
+              </div>
+              <input class="btn btn-dark btn-lg" type="submit" value="Salvar">
+              <button class="btn btn-light  btn-lg" type="reset"> Redefinir os Campos </button>
+              <a href="/ListaProcedimentos" type="button" class="btn btn-primary btn-lg m-2">Voltar</a>
+          </form>
+        </div>
+      </div>
+  </div>
+ </section>
+  </div>
+
+
+
+
+
+
+
+  <!-- /////////////////////////////////////////////////////////////////////////// -->
   <form action="#" th:object="${procedimento}" th:action="@{/atualizarProcedimento/{id}(id=${procedimento.id})}"
     method="post">
     <label for="nome"> Nome do Procedimento </label>
@@ -45,7 +100,7 @@
     <p></p>
 
     <label for="descricao"> Descrição do KB</label>
-    <textarea th:field="*{texto}"  name="texto" id="texto"></textarea>
+    <textarea th:field="*{texto}" name="texto" id="texto"></textarea>
     <span th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}"></span>
     <p></p>
 

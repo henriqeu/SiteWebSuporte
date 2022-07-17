@@ -41,7 +41,7 @@ public class ProcedimentoController {
             return "redirect:/";
         }
         procedimentoRepositorio.save(procedimento);
-        return "redirect:/";
+        return "redirect:/ListaProcedimentos";
     }
 
     // * Procedimento visualizar todos os procedimentos com crud */
@@ -75,7 +75,7 @@ public class ProcedimentoController {
         }
 
         procedimentoRepositorio.save(procedimento);
-        return "redirect:/";
+        return "redirect:/MostrarProcedimento/{id}";
     }
 
     // * Procedimento para o usuario visitante visualizar o procedimento */
@@ -88,6 +88,15 @@ public class ProcedimentoController {
         model.addAttribute("procedimento", p);
 
         return "MostrarProcedimento";
+    }
+
+    // Deletar Procedimento
+    @GetMapping("/deletarProcedimento/{id}")
+    public String deletarProcedimento(@PathVariable("id") long id, Model model) {
+        Procedimento procedimento = procedimentoRepositorio.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("ID invalido:" + id));
+        procedimentoRepositorio.delete(procedimento);
+        return "redirect:/ListaProcedimentos";
     }
 
 }

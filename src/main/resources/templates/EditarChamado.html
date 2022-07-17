@@ -51,14 +51,10 @@
             <form>            
               <!-- Grid row -->
               <div class="form-row">       
-
-             
-
                 <div class="col-md-6 m-3">
                   <!-- Numero Chamado  -->
                   <div class="md-form form-group">
-                    <input type="text" th:field="*{numeroChamado}" disabled class="form-control" id="categoria"
-                      >
+                    <input type="number" th:field="*{numeroChamado}" readonly class="form-control" name="numeroChamado" id="numeroChamado" >
                     <span th:if="${#fields.hasErrors('numeroChamado')}" th:errors="*{numeroChamado}"></span>
                   </div>
                 </div>
@@ -66,7 +62,7 @@
                 <div class="col-md-6 m-3">
                   <!-- CATEGORIA  -->
                   <div class="md-form form-group">
-                    <input type="text" th:field="*{categoria}" class="form-control" id="categoria"
+                    <input type="text" th:field="*{categoria}" class="form-control" name="categoria" id="categoria"
                       placeholder="Categoria">
                     <span th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></span>
                   </div>
@@ -77,8 +73,7 @@
                 <div class="col-md-6 m-3">
                   <!-- PROCEDIMENTO USADO  -->
                   <div class="md-form form-group">
-                    <select class="form-select" aria-label="Default select example" name="procedimentoUsado"
-                      id="procedimentoUsado">
+                    <select class="form-select" aria-label="Default select example" name="procedimentoUsado" id="procedimentoUsado">
                       <option value="Nenhum" selected>Selecione o procedimento que foi usado
                       </option>
                       <option th:each="procedimento :${ListaID_Procedimentos}"
@@ -101,9 +96,9 @@
                   <div class="md-form form-group">
                     <div class="form-floating">
                       <div class="form-floating">
-                        <textarea class="form-control"  th:text="*{descricao}"  id="texto" name="texto"
+                        <textarea class="form-control"  th:text="*{procedimentosFeito}"  id="procedimentosFeito" name="procedimentosFeito"
                           style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Escreve o processo que foi feito para a solucão do
+                        <label for="procedimentosFeito">Escreve o processo que foi feito para a solucão do
                           problema</label>
                       </div>
                     </div>

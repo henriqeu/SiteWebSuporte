@@ -13,6 +13,11 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/")
+    public String index() {
+        return "login";
+    }
+
     @RequestMapping("/error")
     public ModelAndView handleError() {
         ModelAndView modelAndView = new ModelAndView();
