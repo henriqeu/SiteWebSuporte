@@ -34,76 +34,68 @@
 
   <title>Lista de Procedimentos</title>
 </head>
+<style>
+  body {
+    background-image:
+      /* top, transparent red */
+      linear-gradient(rgba(0, 0, 0, 0.652),
+        rgb(0, 0, 0)),
+      /* your image */
+      url(https://1382778335.rsc.cdn77.org/wp-content/uploads/2020/06/Atos-to-acquire-Managed-Detection-and-Response-Leader-Paladion-1.jpg);
+    color: white;
+    background-repeat: no-repeat;
 
-<body style="background-color: rgb(201, 201, 201);">
+  }
+</style>
 
-  <div class="main">
-
-    <!-- Sign up form -->
-    <section class="form">
-      <div style="height:1100px" class="container col-sm-12">
-        <div class="form-content">
-          <h2 class="display-5 text-dark form-title col-md-6 m-3">Procedimento </h2>
-
-          <div class="form-row">
-            <!-- ID Procedimento  -->
-            <div class="col-md-6 m-3">
-              <div class="md-form form-group">
-                <strong>ID:</strong>
-                <p>KB0<span th:text="${procedimento.id}"></span></p>
-              </div>
-            </div>
-            <!--  Procedimento  -->
-            <div class="col-md-6 m-3">
-              <div class="md-form form-group">
-                <strong>Nome</strong>
-                <p><span th:text="${procedimento.nome}"></span></p>
-              </div>
-            </div>
-            <!--  Categoria  -->
-            <div class="col-md-6 m-3">
-              <div class="md-form form-group">
-                <strong>Categoria</strong>
-                <p><span th:text="${procedimento.categoria}"></span></p>
-              </div>
-            </div>
-            <!--  Categoria  -->
-            <div class="col-md-6 m-3">
-              <div class="md-form form-group">
-                <strong>Procediment para ser realizado</strong>
-
-                <p th:utext="${procedimento.texto}"></p>
-              </div>
-            </div>
-
-
-          </div>
-          <a class="btn btn-primary  m-0 float-end" href="/ListaProcedimentos"> Voltar </a>
-        </div>
-    </section>
-
-  </div>
-
-
-
-  <!-- ///////////////////////////  //////////////////////////////////////////////////////////////////////////////// -->
+<body>
   <div class="container">
-    <strong>ID:</strong>
-    <p><span th:text="${procedimento.id}"></span></p>
-    <strong>KB:</strong>
-    <p><span th:text="${procedimento.id_procedimento}"></span></p>
-    <strong>Nome:</strong>
-    <p><span th:text="${procedimento.nome}"></span></p>
-    <strong>Categoria</strong>
-    <p><span th:text="${procedimento.categoria}"></span></p>
-    <p>
-      <strong>Texto:</strong>
+    <div class="main">
+      <!-- Sign up form -->
+      <section class="form">
+        <div style="height:1100px" class="container col-sm-12">
+          <div class="form-content">
+            <h2 class="display-5 text-white form-title col-md-6 m-3">Procedimento #<span
+                th:text="*{procedimento.id}"></span> </h2>
 
-    <div>
-      <p th:utext="${procedimento.texto}"></p>
+
+            <div class="form-row">
+              <!-- ID Procedimento  -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <strong>ID:</strong>
+                  <p>KB0<span th:text="${procedimento.id}"></span></p>
+                </div>
+              </div>
+              <!--  Procedimento  -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <strong>Nome</strong>
+                  <p><span th:text="${procedimento.nome}"></span></p>
+                </div>
+              </div>
+              <!--  Categoria  -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <strong>Categoria</strong>
+                  <p><span th:text="${procedimento.categoria}"></span></p>
+                </div>
+              </div>
+              <!--  Categoria  -->
+              <div class="col-md-6 m-3">
+                <div class="md-form form-group">
+                  <strong>Procediment para ser realizado</strong>
+
+                  <p th:utext="${procedimento.texto}"></p>
+                </div>
+              </div>
+
+
+            </div>
+            <a class="btn btn-primary  m-0 float-end" href="/ListaProcedimentos"> Voltar </a>
+          </div>
+      </section>
     </div>
-    <a href="/ListaProcedimentos"><button>Voltar</button></a>
-    </p>
   </div>
 </body>
 

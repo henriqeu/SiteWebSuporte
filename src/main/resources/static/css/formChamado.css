@@ -3,8 +3,17 @@
     font-family: Poppins;
 }
 .main {
-  background: #a4a4a4;
+  
   padding: 30px 0;
+
+  background-image:
+      /* top, transparent red */
+      linear-gradient(rgba(0, 0, 0, 0.652),
+        rgb(0, 0, 0)),
+      /* your image */
+      url(https://1382778335.rsc.cdn77.org/wp-content/uploads/2020/06/Atos-to-acquire-Managed-Detection-and-Response-Leader-Paladion-1.jpg);
+   
+    background-repeat: no-repeat;
 }
 
 body {

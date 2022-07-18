@@ -20,6 +20,7 @@ public class Chamado {
     @Column(columnDefinition = "TEXT")
     private String procedimentosFeito;
     private String statusChamado;
+    private String dataChamado;
 
     public long getId() {
         return this.id;

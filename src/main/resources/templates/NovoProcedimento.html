@@ -28,6 +28,8 @@
   <!-- TOKEN API KEY TINY -->
   <script src="https://cdn.tiny.cloud/1/kpl0a1vm5qgig5mu740cen300p264akhwbx650rg5o4wzacn/tinymce/6/tinymce.min.js"
     referrerpolicy="origin"></script>
+
+    
   <script>
     tinymce.init({
       selector: 'textarea#texto'
@@ -40,6 +42,7 @@
         'bullist numlist checklist outdent indent | removeformat | code table help'
     })
   </script>
+  
 </head>
 
 <body>
@@ -88,27 +91,5 @@
       </div>
     </section>
   </div>
-
-
-  <!-- ///////////////////////////  -->
-  <form th:object="${procedimento}" th:action="@{/add}" method="post">
-
-    <label for="nome"> Nome do Procedimento </label>
-    <input type="text" name="nome" id="nome">
-    <p>
-      <label for="categoria"> Categoria</label>
-      <input type="text" name="categoria" id="categoria">
-    <p>
-      <label for="texto"> Descrição do KB</label>
-      <textarea id="texto" name="texto" id="texto" rows="10" ></textarea>
-      <br>
-      <input type="submit" value="Submit">
-      <input type="reset" value="Limpar Campos">
-
-  </form>
-  <a href="/ListaProcedimentos"><button>Voltar</button></a>
-
 </body>
-
-
 </html>
